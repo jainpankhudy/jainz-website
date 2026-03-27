@@ -167,6 +167,20 @@
         [id^="slider"] img {
             scroll-snap-align: center;
         }
+
+        /* Dots */
+        .dot {
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 9999px;
+            transition: 0.3s;
+        }
+
+        .dot.active {
+            background: white;
+            transform: scale(1.4);
+        }
     </style>
 
 </head>
@@ -420,6 +434,12 @@
                             <img src="event1-2.jpg" class="w-full h-[220px] object-cover flex-shrink-0">
                             <img src="event1-3.jpg" class="w-full h-[220px] object-cover flex-shrink-0">
                         </div>
+                        <!-- Dots -->
+                        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                            <div class="dot active" id="dot1-0"></div>
+                            <div class="dot" id="dot1-1"></div>
+                            <div class="dot" id="dot1-2"></div>
+                        </div>
 
                         <button onclick="slideLeft('slider1')"
                             class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 px-2 rounded">←</button>
@@ -443,6 +463,12 @@
                             <img src="event2-1.jpg" class="w-full h-[220px] object-cover flex-shrink-0">
                             <img src="event2-2.jpg" class="w-full h-[220px] object-cover flex-shrink-0">
                             <img src="event2-3.jpg" class="w-full h-[220px] object-cover flex-shrink-0">
+                        </div>
+                        <!-- Dots -->
+                        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                            <div class="dot active" id="dot2-0"></div>
+                            <div class="dot" id="dot2-1"></div>
+                            <div class="dot" id="dot2-2"></div>
                         </div>
 
                         <button onclick="slideLeft('slider2')"
@@ -468,7 +494,12 @@
                             <img src="event3-2.jpg" class="w-full h-[220px] object-cover flex-shrink-0">
                             <img src="event3-3.jpg" class="w-full h-[220px] object-cover flex-shrink-0">
                         </div>
-
+                        <!-- Dots -->
+                        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                            <div class="dot active" id="dot3-0"></div>
+                            <div class="dot" id="dot3-1"></div>
+                            <div class="dot" id="dot3-2"></div>
+                        </div>
                         <button onclick="slideLeft('slider3')"
                             class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 px-2 rounded">←</button>
 
@@ -770,6 +801,34 @@
                 behavior: "smooth"
             });
         }
+        /* Auto Slider + Dots */
+
+        function autoSlide(sliderId, dotPrefix, total) {
+            let index = 0;
+            const slider = document.getElementById(sliderId);
+
+            setInterval(() => {
+                index = (index + 1) % total;
+
+                slider.scrollTo({
+                    left: index * slider.clientWidth,
+                    behavior: "smooth"
+                });
+
+                // Update dots
+                for (let i = 0; i < total; i++) {
+                    document.getElementById(`${dotPrefix}-${i}`).classList.remove("active");
+                }
+                document.getElementById(`${dotPrefix}-${index}`).classList.add("active");
+
+            }, 3000);
+        }
+
+        /* Activate sliders */
+
+        autoSlide("slider1", "dot1", 3);
+        autoSlide("slider2", "dot2", 3);
+        autoSlide("slider3", "dot3", 3);
 
     </script>
 
