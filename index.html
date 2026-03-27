@@ -746,91 +746,98 @@
 
             <!-- Tattvam Logo -->
             <div class="flex items-center gap-2 opacity-80 hover:opacity-100 transition">
-
                 <span class="text-sm">Powered by</span>
 
                 <a href="https://www.instagram.com/workwithtattvam?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                     target="_blank" class="hover:scale-105 transition">
 
-                    <img src="Tattvam Logo.png" alt="Tattvam Logo" class="h-10 md:h-12 w-auto">
+                    <img src="Tattvam Logo.png" alt="Tattvam Logo" class="h-20 md:h-42 w-auto">
                 </a>
+            </div>
 
+            <!-- Divider Line -->
+            <div class="w-1/2 h-[1px] bg-gray-500/40 my-2"></div>
+
+            <!-- Watermark -->
+            <div class="text-center text-xs text-white/60 leading-relaxed">
+                <p>Designed & Developed By</p>
+                <p class="font-semibold">Pankhudy Jain</p>
+                <a href="mailto:jpankhudy.2911@gmail.com" class="underline">
+                    jpankhudy.2911@gmail.com
+                </a>
             </div>
 
         </div>
 
-    </footer>
+        <script>
 
+            const btn = document.getElementById('menuBtn')
+            const menu = document.getElementById('mobileMenu')
 
-    <script>
+            btn.onclick = () => menu.classList.toggle('hidden')
 
-        const btn = document.getElementById('menuBtn')
-        const menu = document.getElementById('mobileMenu')
+            AOS.init({
+                duration: 1000,
+                once: true
+            })
 
-        btn.onclick = () => menu.classList.toggle('hidden')
+            /* Main Gallery Scroll */
 
-        AOS.init({
-            duration: 1000,
-            once: true
-        })
+            const gallery = document.getElementById("gallerySlider")
 
-        /* Main Gallery Scroll */
+            document.getElementById("galleryRight").onclick = () => {
+                gallery.scrollBy({ left: 320, behavior: "smooth" })
+            }
 
-        const gallery = document.getElementById("gallerySlider")
+            document.getElementById("galleryLeft").onclick = () => {
+                gallery.scrollBy({ left: -320, behavior: "smooth" })
+            }
 
-        document.getElementById("galleryRight").onclick = () => {
-            gallery.scrollBy({ left: 320, behavior: "smooth" })
-        }
+            /* Inside Card Sliders */
 
-        document.getElementById("galleryLeft").onclick = () => {
-            gallery.scrollBy({ left: -320, behavior: "smooth" })
-        }
-
-        /* Inside Card Sliders */
-
-        function slideLeft(id) {
-            document.getElementById(id).scrollBy({
-                left: -300,
-                behavior: "smooth"
-            });
-        }
-
-        function slideRight(id) {
-            document.getElementById(id).scrollBy({
-                left: 300,
-                behavior: "smooth"
-            });
-        }
-        /* Auto Slider + Dots */
-
-        function autoSlide(sliderId, dotPrefix, total) {
-            let index = 0;
-            const slider = document.getElementById(sliderId);
-
-            setInterval(() => {
-                index = (index + 1) % total;
-
-                slider.scrollTo({
-                    left: index * slider.clientWidth,
+            function slideLeft(id) {
+                document.getElementById(id).scrollBy({
+                    left: -300,
                     behavior: "smooth"
                 });
+            }
 
-                // Update dots
-                for (let i = 0; i < total; i++) {
-                    document.getElementById(`${dotPrefix}-${i}`).classList.remove("active");
-                }
-                document.getElementById(`${dotPrefix}-${index}`).classList.add("active");
+            function slideRight(id) {
+                document.getElementById(id).scrollBy({
+                    left: 300,
+                    behavior: "smooth"
+                });
+            }
+            /* Auto Slider + Dots */
 
-            }, 3000);
-        }
+            function autoSlide(sliderId, dotPrefix, total) {
+                let index = 0;
+                const slider = document.getElementById(sliderId);
 
-        /* Activate sliders */
+                setInterval(() => {
+                    index = (index + 1) % total;
 
-        autoSlide("slider1", "dot1", 3);
-        autoSlide("slider2", "dot2", 3);
-        autoSlide("slider3", "dot3", 3);
+                    slider.scrollTo({
+                        left: index * slider.clientWidth,
+                        behavior: "smooth"
+                    });
 
-    </script>
+                    // Update dots
+                    for (let i = 0; i < total; i++) {
+                        document.getElementById(`${dotPrefix}-${i}`).classList.remove("active");
+                    }
+                    document.getElementById(`${dotPrefix}-${index}`).classList.add("active");
+
+                }, 3000);
+            }
+
+            /* Activate sliders */
+
+            autoSlide("slider1", "dot1", 3);
+            autoSlide("slider2", "dot2", 3);
+            autoSlide("slider3", "dot3", 3);
+
+        </script>
 
 
 </body>
