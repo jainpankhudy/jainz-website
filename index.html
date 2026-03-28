@@ -8,9 +8,7 @@
 
     <title>JAIN-Z Club</title>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <link rel="preload" as="image" href="hero.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -18,15 +16,86 @@
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
     <style>
+        /* ===== TABLET GOTHIC FONT FACES ===== */
+        @font-face {
+            font-family: 'Tablet Gothic';
+            src: url('TabletGothic-Thin.ttf') format('truetype');
+            font-weight: 200;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Tablet Gothic';
+            src: url('TabletGothicLt.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Tablet Gothic';
+            src: url('TabletGothic.ttf') format('truetype');
+            font-weight: 400;
+            /* Regular */
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Tablet Gothic';
+            src: url('TabletGothic-SemiBold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Tablet Gothic';
+            src: url('TabletGothic-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Tablet Gothic';
+            src: url('TabletGothicEb.ttf') format('truetype');
+            font-weight: 800;
+            /* Extra Bold */
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Tablet Gothic';
+            src: url('TabletGothic-Heavy.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Tablet Gothic';
+            src: url('TabletGothic-HeavyOblique.ttf') format('truetype');
+            font-weight: 900;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        /* ===== GLOBAL STYLES ===== */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Tablet Gothic', sans-serif;
             background: #F7F7F7;
         }
 
         h1,
         h2,
-        h3 {
-            font-family: 'Poppins', sans-serif;
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Tablet Gothic', sans-serif;
         }
 
         .hero {
@@ -158,7 +227,8 @@
             <a class="mobile-link py-4 border-b border-gray-100 text-lg hover:text-red-600" href="#about">About</a>
             <a class="mobile-link py-4 border-b border-gray-100 text-lg hover:text-red-600" href="#gallery">Gallery</a>
             <a class="mobile-link py-4 border-b border-gray-100 text-lg hover:text-red-600" href="#events">Events</a>
-            <a class="mobile-link py-4 border-b border-gray-100 text-lg hover:text-red-600" href="#insights">Insights</a>
+            <a class="mobile-link py-4 border-b border-gray-100 text-lg hover:text-red-600"
+                href="#insights">Insights</a>
 
             <a class="py-3 mt-4 font-semibold text-center text-lg bg-red-600 text-white rounded-lg hover:bg-red-700"
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeK7pejR7I3_VeEM6uhHfK0s2vBdyf4BnkJQqiIGUWbHQk3Vg/viewform"
@@ -179,7 +249,8 @@
                 A modern Jain youth community for connection, conversations and growth.
             </p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeK7pejR7I3_VeEM6uhHfK0s2vBdyf4BnkJQqiIGUWbHQk3Vg/viewform"
-                target="_blank" class="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-semibold transition">
+                target="_blank"
+                class="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-semibold transition">
                 Join the Community
             </a>
         </div>
@@ -201,12 +272,11 @@
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-24 gap-x-8 px-6 mt-6">
 
             <div class="relative card bg-white p-8 pt-16 rounded-xl overflow-visible" data-aos="fade-up">
-
                 <div
                     class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full border-4 border-white bg-white shadow-lg z-10">
-                    <img src="about01.jpg" class="w-full h-full rounded-full object-cover">
+                    <img src="about01.jpg" alt="Conscious Living" class="w-full h-full rounded-full object-cover"
+                        loading="lazy" decoding="async">
                 </div>
-
                 <h3 class="font-bold text-xl mb-2 text-center md:text-left pt-2">Conscious Living</h3>
                 <p class="text-gray-600 text-center md:text-left">
                     Pause, observe, and choose mindfully. JAIN-Z encourages awareness in thoughts, actions, and
@@ -216,12 +286,11 @@
 
             <div class="relative card bg-white p-8 pt-16 rounded-xl overflow-visible" data-aos="fade-up"
                 data-aos-delay="100">
-
                 <div
                     class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full border-4 border-white bg-white shadow-lg z-10">
-                    <img src="about02.jpg" class="w-full h-full rounded-full object-cover">
+                    <img src="about02.jpg" alt="Experiential Learning" class="w-full h-full rounded-full object-cover"
+                        loading="lazy" decoding="async">
                 </div>
-
                 <h3 class="font-bold text-xl mb-2 text-center md:text-left pt-2">Experiential Learning</h3>
                 <p class="text-gray-600 text-center md:text-left">
                     We don’t preach values, we experience them. Through games, conversations, and real-life situations,
@@ -231,12 +300,11 @@
 
             <div class="relative card bg-white p-8 pt-16 rounded-xl overflow-visible" data-aos="fade-up"
                 data-aos-delay="200">
-
                 <div
                     class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full border-4 border-white bg-white shadow-lg z-10">
-                    <img src="about03.jpg" class="w-full h-full rounded-full object-cover">
+                    <img src="about03.jpg" alt="Inclusive Community" class="w-full h-full rounded-full object-cover"
+                        loading="lazy" decoding="async">
                 </div>
-
                 <h3 class="font-bold text-xl mb-2 text-center md:text-left pt-2">Inclusive Community</h3>
                 <p class="text-gray-600 text-center md:text-left">
                     Open to all, beyond labels or branches. JAIN-Z builds a respectful, judgment-free space where
@@ -253,17 +321,20 @@
         </h2>
         <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-6">
             <div class="card bg-white p-6 rounded-xl text-center">
-                <img src="hero.jpg" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                <img src="hero.jpg" alt="Sanyam Jain" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                    loading="lazy" decoding="async">
                 <h3 class="font-bold">Sanyam Jain</h3>
                 <p class="text-gray-600">Founder</p>
             </div>
             <div class="card bg-white p-6 rounded-xl text-center">
-                <img src="hero.jpg" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                <img src="hero.jpg" alt="Vinay Jain" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                    loading="lazy" decoding="async">
                 <h3 class="font-bold">Vinay Jain</h3>
                 <p class="text-gray-600">Co-Founder</p>
             </div>
             <div class="card bg-white p-6 rounded-xl text-center">
-                <img src="hero.jpg" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                <img src="hero.jpg" alt="Ariha Jain" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                    loading="lazy" decoding="async">
                 <h3 class="font-bold">Ariha Jain</h3>
                 <p class="text-gray-600">Head, Mumbai</p>
             </div>
@@ -288,9 +359,12 @@
                 <div class="slide flex-shrink-0 w-[85vw] md:w-[300px] card bg-white rounded-xl overflow-hidden">
                     <div class="relative">
                         <div class="flex overflow-x-auto" id="slider1">
-                            <img src="event1-1.jpg" class="w-full h-[220px] object-cover flex-shrink-0">
-                            <img src="event1-2.jpg" class="w-full h-[220px] object-cover flex-shrink-0">
-                            <img src="event1-3.jpg" class="w-full h-[220px] object-cover flex-shrink-0">
+                            <img src="event1-1.jpg" alt="Event Image"
+                                class="w-full h-[220px] object-cover flex-shrink-0" loading="lazy" decoding="async">
+                            <img src="event1-2.jpg" alt="Event Image"
+                                class="w-full h-[220px] object-cover flex-shrink-0" loading="lazy" decoding="async">
+                            <img src="event1-3.jpg" alt="Event Image"
+                                class="w-full h-[220px] object-cover flex-shrink-0" loading="lazy" decoding="async">
                         </div>
                         <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
                             <div class="dot active" id="dot1-0"></div>
@@ -307,9 +381,12 @@
                 <div class="slide flex-shrink-0 w-[85vw] md:w-[300px] card bg-white rounded-xl overflow-hidden">
                     <div class="relative">
                         <div class="flex overflow-x-auto" id="slider2">
-                            <img src="event2-1.jpg" class="w-full h-[220px] object-cover flex-shrink-0">
-                            <img src="event2-2.jpg" class="w-full h-[220px] object-cover flex-shrink-0">
-                            <img src="event2-3.jpg" class="w-full h-[220px] object-cover flex-shrink-0">
+                            <img src="event2-1.jpg" alt="Event Image"
+                                class="w-full h-[220px] object-cover flex-shrink-0" loading="lazy" decoding="async">
+                            <img src="event2-2.jpg" alt="Event Image"
+                                class="w-full h-[220px] object-cover flex-shrink-0" loading="lazy" decoding="async">
+                            <img src="event2-3.jpg" alt="Event Image"
+                                class="w-full h-[220px] object-cover flex-shrink-0" loading="lazy" decoding="async">
                         </div>
                         <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
                             <div class="dot active" id="dot2-0"></div>
@@ -326,9 +403,12 @@
                 <div class="slide flex-shrink-0 w-[85vw] md:w-[300px] card bg-white rounded-xl overflow-hidden">
                     <div class="relative">
                         <div class="flex overflow-x-auto" id="slider3">
-                            <img src="event3-1.jpg" class="w-full h-[220px] object-cover flex-shrink-0">
-                            <img src="event3-2.jpg" class="w-full h-[220px] object-cover flex-shrink-0">
-                            <img src="event3-3.jpg" class="w-full h-[220px] object-cover flex-shrink-0">
+                            <img src="event3-1.jpg" alt="Event Image"
+                                class="w-full h-[220px] object-cover flex-shrink-0" loading="lazy" decoding="async">
+                            <img src="event3-2.jpg" alt="Event Image"
+                                class="w-full h-[220px] object-cover flex-shrink-0" loading="lazy" decoding="async">
+                            <img src="event3-3.jpg" alt="Event Image"
+                                class="w-full h-[220px] object-cover flex-shrink-0" loading="lazy" decoding="async">
                         </div>
                         <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
                             <div class="dot active" id="dot3-0"></div>
@@ -384,7 +464,8 @@
 
         <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 px-6">
             <div class="card bg-white rounded-xl overflow-hidden" data-aos="fade-up">
-                <img src="blog1.jpeg" class="w-full h-[220px] object-cover object-[50%_15%] rounded-t-xl">
+                <img src="blog1.jpeg" alt="Blog 1" class="w-full h-[220px] object-cover object-[50%_15%] rounded-t-xl"
+                    loading="lazy" decoding="async">
                 <div class="p-6">
                     <h3 class="font-bold text-xl mb-2">The Ideology Behind JAIN-Z Club: Ancient Wisdom, Modern Living
                     </h3>
@@ -397,7 +478,8 @@
             </div>
 
             <div class="card bg-white rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                <img src="blog2.jpeg" class="w-full h-[220px] object-cover object-[50%_70%] rounded-t-xl">
+                <img src="blog2.jpeg" alt="Blog 2" class="w-full h-[220px] object-cover object-[50%_70%] rounded-t-xl"
+                    loading="lazy" decoding="async">
                 <div class="p-6">
                     <h3 class="font-bold text-xl mb-2">Why Jain Youth Are the Future of Our Community and Nation</h3>
                     <p class="text-gray-600 text-sm mb-4">
@@ -409,7 +491,8 @@
             </div>
 
             <div class="card bg-white rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                <img src="blog3.jpeg" class="w-full h-[220px] object-cover">
+                <img src="blog3.jpeg" alt="Blog 3" class="w-full h-[220px] object-cover" loading="lazy"
+                    decoding="async">
                 <div class="p-6">
                     <h3 class="font-bold text-xl mb-2">Unity in Diversity: A Gentle Call for the Jain Community to Come
                         Together</h3>
@@ -428,7 +511,13 @@
         <div class="max-w-xl mx-auto text-center space-y-6">
             <a href="https://www.instagram.com/jainz_club" target="_blank"
                 class="flex items-center justify-center gap-3 bg-pink-600 text-white py-3 rounded-lg font-semibold hover:bg-pink-700 transition duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="w-6 h-6">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
                 Follow us on Instagram
             </a>
             <p class="text-lg">
@@ -447,7 +536,7 @@
                 <span class="text-sm">Powered by</span>
                 <a href="https://www.instagram.com/workwithtattvam?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                     target="_blank" class="hover:scale-105 transition">
-                    <img src="Tattvam Logo.png" alt="Tattvam Logo" class="h-20 md:h-42 w-auto">
+                    <img src="Tattvam Logo.png" alt="Tattvam Logo" class="h-20 md:h-42 w-auto" loading="lazy">
                 </a>
             </div>
             <div class="w-1/2 h-[1px] bg-gray-500/40 my-2"></div>
@@ -483,7 +572,7 @@
             once: true
         })
 
-        /* Main Gallery Scroll - Updated for dynamic widths */
+        /* Main Gallery Scroll */
         const gallery = document.getElementById("gallerySlider")
 
         if (document.getElementById("galleryRight")) {
@@ -498,23 +587,6 @@
                 const cardWidth = gallery.querySelector('.slide').clientWidth;
                 gallery.scrollBy({ left: -(cardWidth + 24), behavior: "smooth" })
             }
-        }
-
-        /* Inside Card Sliders - Updated for dynamic widths */
-        function slideLeft(id) {
-            const slider = document.getElementById(id);
-            slider.scrollBy({
-                left: -slider.clientWidth,
-                behavior: "smooth"
-            });
-        }
-
-        function slideRight(id) {
-            const slider = document.getElementById(id);
-            slider.scrollBy({
-                left: slider.clientWidth,
-                behavior: "smooth"
-            });
         }
 
         /* Auto Slider + Dots */
@@ -536,7 +608,7 @@
                 }
                 document.getElementById(`${dotPrefix}-${index}`).classList.add("active");
 
-            }, 3000);
+            }, 3000); // 3-second carousel timer
         }
 
         /* Activate sliders */
