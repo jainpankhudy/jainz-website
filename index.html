@@ -159,7 +159,7 @@
         }
 
         .slide {
-            scroll-snap-align: center;
+            scroll-snap-align: start;
         }
 
         /* Inner sliders */
@@ -346,7 +346,7 @@
             Past Events Gallery
         </h2>
 
-        <div class="max-w-7xl mx-auto px-6 relative">
+        <div class="max-w-[1060px] mx-auto px-12 md:px-6 relative">
 
             <button id="galleryLeft"
                 class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full w-10 h-10 items-center justify-center z-10 hover:bg-gray-100">
@@ -354,7 +354,7 @@
             </button>
 
             <div id="gallerySlider"
-                class="slider grid grid-cols-1 md:flex justify-items-center gap-8 md:gap-6 overflow-x-hidden md:overflow-x-auto scroll-smooth pb-6 mx-auto w-full md:max-w-fit px-4">
+                class="slider flex gap-6 overflow-x-auto md:overflow-x-hidden scroll-smooth mx-auto w-full md:max-w-[948px] py-4 snap-x snap-mandatory">
 
                 <div class="slide flex-shrink-0 w-[85vw] md:w-[300px] card bg-white rounded-xl overflow-hidden">
                     <div class="relative">
@@ -419,6 +419,34 @@
                     <div class="p-4 text-center">
                         <h3 class="font-bold text-lg">Temple Run</h3>
                         <p class="text-gray-600 text-sm">Discussion on modern Jain values</p>
+                    </div>
+                </div>
+
+                <div class="slide flex-shrink-0 w-[85vw] md:w-[300px] card bg-white rounded-xl overflow-hidden">
+                    <div class="relative">
+                        <div class="flex overflow-x-auto" id="slider4">
+                            <img src="event4-1.jpg" alt="The OGs Carnival Image"
+                                class="w-full h-[220px] object-cover flex-shrink-0" loading="lazy" decoding="async">
+                            <img src="event4-2.jpg" alt="The OGs Carnival Image"
+                                class="w-full h-[220px] object-cover flex-shrink-0" loading="lazy" decoding="async">
+                            <img src="event4-3.jpg" alt="The OGs Carnival Image"
+                                class="w-full h-[220px] object-cover flex-shrink-0" loading="lazy" decoding="async">
+                            <img src="event4-4.jpg" alt="The OGs Carnival Image"
+                                class="w-full h-[220px] object-cover flex-shrink-0" loading="lazy" decoding="async">
+                            <img src="event4-5.jpg" alt="The OGs Carnival Image"
+                                class="w-full h-[220px] object-cover flex-shrink-0" loading="lazy" decoding="async">
+                        </div>
+                        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                            <div class="dot active" id="dot4-0"></div>
+                            <div class="dot" id="dot4-1"></div>
+                            <div class="dot" id="dot4-2"></div>
+                            <div class="dot" id="dot4-3"></div>
+                            <div class="dot" id="dot4-4"></div>
+                        </div>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg">The OGs Carnival</h3>
+                        <p class="text-gray-600 text-sm">Spreading happiness and learning</p>
                     </div>
                 </div>
 
@@ -615,6 +643,7 @@
         autoSlide("slider1", "dot1", 3);
         autoSlide("slider2", "dot2", 3);
         autoSlide("slider3", "dot3", 3);
+        autoSlide("slider4", "dot4", 5); // New 4th card initialization
     </script>
 
 </body>
